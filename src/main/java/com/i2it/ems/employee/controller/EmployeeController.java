@@ -43,12 +43,14 @@ public class EmployeeController {
      *     - When Exception occurs
      */
     public void createEmployee() throws DataBaseException {
+        logger.debug("Entering createEmployee");
         String name = getName();
         String address= getAddress();
         LocalDate dob = getDob();
         Employee employee = new Employee(name , dob, address);
         employeeService.createEmployee(employee);
         logger.info("Employee added with name = " + name);
+        logger.debug("Exiting createEmployee");
     }
     
     /**
@@ -60,6 +62,7 @@ public class EmployeeController {
      *     - When Exception occurs
      */
     public void displayEmployees() throws DataBaseException {
+        logger.debug("Entering displayEmployees");
         List<Employee> employees = employeeService.retrieveEmployees();
         if (employees != null) {
             System.out.println("-----------------------------------------------");
@@ -72,9 +75,11 @@ public class EmployeeController {
                                   : employee.getDepartment().getName()); 
             }
             System.out.println("-----------------------------------------------");
+            logger.info("Displayed all employees");
         } else {
-            System.out.println("No employees");
+            logger.error("No employees");
         }
+        logger.debug("Exiting displayEmployees");
     }
     
     /**
@@ -86,6 +91,7 @@ public class EmployeeController {
      *     - When Exception occurs
      */
     public void displayEmployeeById() throws DataBaseException {
+        logger.debug("Entering displayEmployeeById");
         System.out.println("Enter the Employee id");
         int id = getId();
         Employee employee = employeeService.retrieveEmployeeById(id);
@@ -101,9 +107,11 @@ public class EmployeeController {
                               "Not Assigned" : employee.displayProjects());
             System.out.println("----------------------------------------------------------"
                                + "-------------------------------------------------------");
+            logger.info("Displayed employee with id = " + id);
         } else {
-            System.out.println("No such employee id : " +id);
+            logger.error("No such employee id : " + id);
         }
+        logger.debug("Exiting displayEmployeeById");
     }
 
     /**
@@ -115,15 +123,18 @@ public class EmployeeController {
      *     - When Exception occurs
      */
     public void updateEmployee() throws DataBaseException {
+        logger.debug("Entering updateEmployee");
         System.out.println("Enter the Employee Id to update");
         int id = getId();
         Employee employee = employeeService.retrieveEmployeeById(id);
         if (employee != null) {
             Employee updatedEmployee = updateOperation(employee);
             employeeService.createEmployee(updatedEmployee);
+            logger.info("updated employee with id = " + id);
         } else {
-            System.out.println("No such employee id : " +id);
+            logger.error("No such employee id : " + id);
         } 
+        logger.debug("Exiting updateEmployee");
     }
 
     /**
@@ -137,13 +148,16 @@ public class EmployeeController {
      *     - When Exception occurs
      */
     public void deleteEmployee(int id) throws DataBaseException {
+        logger.debug("Entering deleteEmployee");
         Employee employee = employeeService.retrieveEmployeeById(id);
         if (employee != null) {
             employee.setIsActive(false);
-            employeeService.deleteEmployee(employee);    
+            employeeService.deleteEmployee(employee);
+            logger.info("delete employee with id = " + id);    
         } else {
-            System.out.println("No such employee id : " +id);
+            logger.error("No such employee id : " + id);
         }
+        logger.debug("Exiting deleteEmployee");
     }
 
     /**
@@ -157,6 +171,7 @@ public class EmployeeController {
      *     - Exception occurs
      */
     public void displayOperation() throws DataBaseException, NumberFormatException {
+        logger.debug("Entering displayOperation");
         boolean repeatList = true;
         while (repeatList) {
             System.out.println("Select the choice [1-3]");
@@ -176,10 +191,11 @@ public class EmployeeController {
                         repeatList = false;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Please Enter Number between [1-3]");
+                logger.error("Please Enter Number between [1-3]");
                 throw new NumberFormatException("issue while display the list choice ");
             }
         }
+        logger.debug("Exiting displayOperation");
     }
 
     /**
@@ -193,6 +209,7 @@ public class EmployeeController {
      *     - When Exception occurs.
      */
     public Employee updateOperation(Employee employee) throws DataBaseException, NumberFormatException {
+        logger.debug("Entering updateOperation");
         boolean repeat = true;
         while (repeat) {
             System.out.println("1 ==> Update Name");
@@ -217,11 +234,12 @@ public class EmployeeController {
                     default: System.out.println("Enter valid option between[1-3]");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Enter valid option between[1-3]");
+                logger.error("Enter valid option between[1-3]");
                 throw new NumberFormatException("issue while display the list choice ");
             }
             repeat = false;
         }
+        logger.debug("Exiting updateOperation");
         return employee;
     }
 
@@ -272,7 +290,7 @@ public class EmployeeController {
                 id = Integer.parseInt(scanner.nextLine());
                 repeat = false;
             } catch (NumberFormatException e) {
-                System.out.println("Please Enter Number");
+                logger.error("Please Enter Number");
                 repeat = false;
             }
         } while (repeat);
@@ -295,7 +313,7 @@ public class EmployeeController {
                 dob = scanner.nextLine();
                 repeat = Validator.dobValidate(dob);
             } catch (DateTimeParseException e) {
-                System.out.println("Please enter date in YYYY-MM-DD format.");
+                logger.error("Please enter date in YYYY-MM-DD format.");
             }
         } while (! repeat);
         return LocalDate.parse(dob);
@@ -307,6 +325,7 @@ public class EmployeeController {
      * </p>  
      */
     public void assignDepartment() throws DataBaseException {
+        logger.debug("Entering assignDepartment");
         displayEmployees();
         int employeeId = getId();
         Employee employee = employeeService.retrieveEmployeeById(employeeId);
@@ -315,6 +334,8 @@ public class EmployeeController {
         Department department = employeeService.retrieveDepartmentById(departmentId);
         employee.setDepartment(department);
         employeeService.createEmployee(employee);
+        logger.info("Department assigned for employee id = " + employeeId)
+        logger.debug("Exiting assignDepartment");
     }
 
     /**
@@ -323,6 +344,7 @@ public class EmployeeController {
      * </p>  
      */
     public void assignProject() throws DataBaseException {
+        logger.debug("Entering assignProject");
         displayEmployees();
         int employeeId = getId();
         Employee employee = employeeService.retrieveEmployeeById(employeeId);
@@ -333,6 +355,8 @@ public class EmployeeController {
         projects.add(project); 
         employee.setProjects(projects);
         employeeService.createEmployee(employee);
+        logger.info("Project assigned for employee id = " + employeeId)
+        logger.debug("assignProject Exiting");
     }
 
     /**
@@ -341,6 +365,7 @@ public class EmployeeController {
      * </p>  
      */
     public void displayEmployeeByDepartment() throws DataBaseException {
+        logger.debug("Entering displayEmployeeByDepartment");
         departmentController.displayDepartments();
         int departmentId = getId();
         Department department = employeeService.retrieveDepartmentById(departmentId);
@@ -358,11 +383,12 @@ public class EmployeeController {
                 }
                 System.out.println("----------------------------------------");
             } else {
-                System.out.println("No Employedd assigned for the " + department.getName() + department.getId());
+                logger.error("No Employedd assigned for the " + department.getName() + department.getId());
             }
         } else {
-            System.out.println("No such department");
+            logger.error("No such department");
         }
+        logger.debug("Exiting displayEmployeeByDepartment");
     }
 
     /**
@@ -371,6 +397,7 @@ public class EmployeeController {
      * </p>  
      */
     public void displayEmployeeByProject() throws DataBaseException {
+        logger.debug("Entering displayEmployeeByProject");
         projectController.displayProjects();
         int projectId = getId();
         Project project = employeeService.retrieveProjectById(projectId);
@@ -388,11 +415,12 @@ public class EmployeeController {
                 }
                 System.out.println("----------------------------------------");
             } else {
-                System.out.println("No Employedd assigned for the " + project.getName());
+                logger.error("No Employedd assigned for the " + project.getName());
             }
         } else {
-            System.out.println("No such project");
+            logger.error("No such project");
         }
+        logger.debug("Exiting displayEmployeeByProject");
     }
         
     /**
@@ -402,6 +430,7 @@ public class EmployeeController {
      * </p>
      */
     public void displayChoice() {
+        logger.debug("Entering displayChoice");
         boolean repeat = true;
         while (repeat) {
             System.out.println("Select the choice [1-5]");
@@ -448,13 +477,14 @@ public class EmployeeController {
                     default: System.out.println("Enter valid number");
                 }
             } catch (DataBaseException e) {
-                System.out.println(e.getMessage());
+                logger.error(e.getMessage());
             } catch (NumberFormatException e) {
-                System.out.println(e.getMessage());
+                logger.error(e.getMessage());
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                logger.error(e.getMessage());
             }
         }
+        logger.debug("Exiting displayChoice");
     }
 
 }

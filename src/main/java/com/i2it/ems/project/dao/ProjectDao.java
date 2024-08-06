@@ -36,4 +36,16 @@ public interface ProjectDao {
      */
     public List<Project> retrieveProjects() throws DataBaseException;
 
+    /**
+     * <p>
+     * Retrieve Project by id.
+     * </p>
+     *
+     * @return Project
+     *     - Project details 
+     * @throws DataBaseException 
+     *     - When Exception occurs
+     */
+    Project retrieveProjectById(int id) throws DataBaseException;
+
 }

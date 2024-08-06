@@ -42,14 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee retrieveEmployeeById(int id) throws DataBaseException {
-        Employee getEmployee = null;
-        List<Employee> employees = employeeDao.retrieveEmployees();
-        for (Employee employee : employees) {
-            if (employee.getId() == id) {
-                getEmployee = employee;
-            } 
-        }
-        return getEmployee;
+       return employeeDao.retrieveEmployeeById(id); 
     }
 
     @Override

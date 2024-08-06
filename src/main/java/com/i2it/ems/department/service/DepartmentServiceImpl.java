@@ -34,14 +34,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department retrieveDepartmentById(int id) throws DataBaseException {
-        Department getDepartment = null;
-        List<Department> departments = departmentDao.retrieveDepartments();
-        for (Department department : departments) {
-            if (department.getId() == id) {
-                getDepartment = department;
-            } 
-        }
-        return getDepartment;
+        return departmentDao.retrieveDepartmentById(id);    
     }
 
     @Override

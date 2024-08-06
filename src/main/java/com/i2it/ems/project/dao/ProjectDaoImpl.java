@@ -2,6 +2,8 @@ package com.i2it.ems.project.dao;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
@@ -13,6 +15,8 @@ import com.i2it.ems.helper.HibernateManage;
 import com.i2it.ems.model.Project;
 
 public class ProjectDaoImpl implements ProjectDao {
+
+    private static final Logger logger = LogManager.getLogger(DepartmentDaoImpl.class);
     
     @Override
     public void saveOrUpdateProject(Project project) throws DataBaseException {  
@@ -27,6 +31,7 @@ public class ProjectDaoImpl implements ProjectDao {
             transaction.commit();
         } catch (Exception e) {
             HibernateManage.rollBackTransaction(transaction);
+            logger.error("Issue while creating the project" + project.getName());
             throw new DataBaseException("Issue while creating the project" + project.getName());
         }
     }
@@ -37,7 +42,18 @@ public class ProjectDaoImpl implements ProjectDao {
             Query query = session.createQuery("from Project where isactive = true"); 
             return query.list();
         } catch (Exception e) {
+            logger.error("Issue while retrieve the department");
             throw new DataBaseException("Issue while retrieve the department");
+        }
+    }
+
+    @Override
+    public Project retrieveProjectById(int id) throws DataBaseException {  
+        try (Session session = HibernateManage.getSessionFactory().openSession()) {
+            return session.get(Project.class, id); 
+        } catch (Exception e) {
+            logger.error("Issue while retrieve the Project " + id);
+            throw new DataBaseException("Issue while retrieve the Project " + id);
         }
     }
 

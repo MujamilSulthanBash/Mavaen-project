@@ -34,14 +34,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project retrieveProjectById(int id) throws DataBaseException {
-        Project getProject = null;
-        List<Project> projects = projectDao.retrieveProjects();
-        for (Project project : projects) {
-            if (project.getId() == id) {
-                getProject = project;
-            } 
-        }
-        return getProject;
+        return projectDao.retrieveProjectById(id);
     }
 
     @Override

@@ -8,3 +8,93 @@
 [INFO ] 2024-08-06 12:41:06.152 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
 [INFO ] 2024-08-06 12:41:08.188 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@381015f9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 [INFO ] 2024-08-06 12:42:45.802 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:18:29.388 [ManageEmployee.main()] Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO ] 2024-08-06 14:18:29.888 [ManageEmployee.main()] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[WARN ] 2024-08-06 14:18:29.998 [ManageEmployee.main()] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2024-08-06 14:18:30.014 [ManageEmployee.main()] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/EmployeeManagee]
+[INFO ] 2024-08-06 14:18:30.014 [ManageEmployee.main()] pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[INFO ] 2024-08-06 14:18:30.014 [ManageEmployee.main()] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2024-08-06 14:18:30.014 [ManageEmployee.main()] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+[INFO ] 2024-08-06 14:18:30.295 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2024-08-06 14:18:31.170 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3ba7a0d9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2024-08-06 14:21:11.187 [ManageEmployee.main()] EmployeeController - Employee added with name = karthi
+[INFO ] 2024-08-06 14:22:53.573 [ManageEmployee.main()] Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO ] 2024-08-06 14:22:53.995 [ManageEmployee.main()] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[WARN ] 2024-08-06 14:22:54.089 [ManageEmployee.main()] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2024-08-06 14:22:54.104 [ManageEmployee.main()] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/EmployeeManagee]
+[INFO ] 2024-08-06 14:22:54.104 [ManageEmployee.main()] pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[INFO ] 2024-08-06 14:22:54.104 [ManageEmployee.main()] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2024-08-06 14:22:54.104 [ManageEmployee.main()] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+[INFO ] 2024-08-06 14:22:54.371 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2024-08-06 14:22:55.199 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@386ae055] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2024-08-06 14:22:55.396 [ManageEmployee.main()] DepartmentController - Department created with name = hr
+[INFO ] 2024-08-06 14:24:53.453 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:25:03.088 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:25:11.883 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:25:19.834 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:25:28.324 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:25:40.883 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[ERROR] 2024-08-06 14:25:58.900 [ManageEmployee.main()] ProjectController - No projects
+[ERROR] 2024-08-06 14:26:25.843 [ManageEmployee.main()] ProjectController - No projects
+[INFO ] 2024-08-06 14:26:35.079 [ManageEmployee.main()] ProjectController - project created with name = front end
+[INFO ] 2024-08-06 14:26:42.137 [ManageEmployee.main()] ProjectController - project created with name = back end
+[INFO ] 2024-08-06 14:26:46.544 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:26:58.713 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:27:17.149 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:27:28.409 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:27:35.721 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:27:39.588 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:27:45.864 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:27:51.559 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:27:59.133 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:28:05.259 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:35:20.977 [ManageEmployee.main()] Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO ] 2024-08-06 14:35:22.043 [ManageEmployee.main()] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[WARN ] 2024-08-06 14:35:22.405 [ManageEmployee.main()] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2024-08-06 14:35:22.421 [ManageEmployee.main()] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/EmployeeManagee]
+[INFO ] 2024-08-06 14:35:22.421 [ManageEmployee.main()] pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[INFO ] 2024-08-06 14:35:22.421 [ManageEmployee.main()] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2024-08-06 14:35:22.426 [ManageEmployee.main()] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+[INFO ] 2024-08-06 14:35:23.035 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2024-08-06 14:35:25.262 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d432b69] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2024-08-06 14:35:25.919 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:40:32.760 [ManageEmployee.main()] Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO ] 2024-08-06 14:40:33.765 [ManageEmployee.main()] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[WARN ] 2024-08-06 14:40:34.045 [ManageEmployee.main()] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2024-08-06 14:40:34.068 [ManageEmployee.main()] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/EmployeeManagee]
+[INFO ] 2024-08-06 14:40:34.068 [ManageEmployee.main()] pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[INFO ] 2024-08-06 14:40:34.068 [ManageEmployee.main()] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2024-08-06 14:40:34.076 [ManageEmployee.main()] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+[INFO ] 2024-08-06 14:40:34.734 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2024-08-06 14:40:36.815 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2f1da06a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2024-08-06 14:40:37.489 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:40:56.202 [ManageEmployee.main()] DepartmentController - Displayed Departments
+[INFO ] 2024-08-06 14:41:04.228 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 14:41:13.185 [ManageEmployee.main()] ProjectController - Displayed all projects
+[INFO ] 2024-08-06 17:06:41.926 [ManageEmployee.main()] Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO ] 2024-08-06 17:06:42.961 [ManageEmployee.main()] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[WARN ] 2024-08-06 17:06:43.291 [ManageEmployee.main()] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2024-08-06 17:06:43.308 [ManageEmployee.main()] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/EmployeeManagee]
+[INFO ] 2024-08-06 17:06:43.308 [ManageEmployee.main()] pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[INFO ] 2024-08-06 17:06:43.308 [ManageEmployee.main()] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2024-08-06 17:06:43.308 [ManageEmployee.main()] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+[INFO ] 2024-08-06 17:06:43.983 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2024-08-06 17:06:46.223 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2f1da06a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2024-08-06 17:44:41.097 [ManageEmployee.main()] Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO ] 2024-08-06 17:44:42.131 [ManageEmployee.main()] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[WARN ] 2024-08-06 17:44:42.445 [ManageEmployee.main()] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2024-08-06 17:44:42.461 [ManageEmployee.main()] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/EmployeeManagee]
+[INFO ] 2024-08-06 17:44:42.461 [ManageEmployee.main()] pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[INFO ] 2024-08-06 17:44:42.461 [ManageEmployee.main()] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2024-08-06 17:44:42.476 [ManageEmployee.main()] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+[INFO ] 2024-08-06 17:44:43.121 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2024-08-06 17:44:45.252 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2f1da06a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[INFO ] 2024-08-06 17:48:02.052 [ManageEmployee.main()] Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO ] 2024-08-06 17:48:03.133 [ManageEmployee.main()] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[WARN ] 2024-08-06 17:48:03.415 [ManageEmployee.main()] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2024-08-06 17:48:03.433 [ManageEmployee.main()] pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/EmployeeManagee]
+[INFO ] 2024-08-06 17:48:03.433 [ManageEmployee.main()] pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[INFO ] 2024-08-06 17:48:03.433 [ManageEmployee.main()] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2024-08-06 17:48:03.433 [ManageEmployee.main()] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+[INFO ] 2024-08-06 17:48:04.138 [ManageEmployee.main()] Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO ] 2024-08-06 17:48:06.337 [ManageEmployee.main()] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@79e56484] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.

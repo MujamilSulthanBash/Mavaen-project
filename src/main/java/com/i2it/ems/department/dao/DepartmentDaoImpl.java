@@ -2,6 +2,8 @@ package com.i2it.ems.department.dao;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
@@ -13,6 +15,8 @@ import com.i2it.ems.helper.HibernateManage;
 import com.i2it.ems.model.Department;
 
 public class DepartmentDaoImpl implements DepartmentDao {
+
+    private static final Logger logger = LogManager.getLogger(DepartmentDaoImpl.class);
     
     @Override
     public void saveOrUpdateDepartment(Department department) throws DataBaseException {  
@@ -27,6 +31,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
             transaction.commit();
         } catch (Exception e) {
             HibernateManage.rollBackTransaction(transaction);
+            logger.error("Issue while creating the department" + department.getName());
             throw new DataBaseException("Issue while creating the department" + department.getName());
         }
     }
@@ -37,7 +42,18 @@ public class DepartmentDaoImpl implements DepartmentDao {
             Query query = session.createQuery("from Department where isactive = true"); 
             return query.list();
         } catch (Exception e) {
+            logger.error("Issue while retrieve the department");
             throw new DataBaseException("Issue while retrieve the department");
+        }
+    }
+
+    @Override
+    public Department retrieveDepartmentById(int id) throws DataBaseException {  
+        try (Session session = HibernateManage.getSessionFactory().openSession()) {
+            return session.get(Department.class, id); 
+        } catch (Exception e) {
+            logger.error("Issue while retrieve the department with id " + id);
+            throw new DataBaseException("Issue while retrieve the department with id " + id);
         }
     }
 

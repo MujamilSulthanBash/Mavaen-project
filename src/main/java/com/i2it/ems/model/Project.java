@@ -31,7 +31,7 @@ public class Project {
     private String name;
     private boolean isActive;
     
-    @ManyToMany(mappedBy = "projects")
+    @ManyToMany(mappedBy = "projects" ,fetch = FetchType.EAGER)
     Set<Employee> employees;
 
     public Project() {

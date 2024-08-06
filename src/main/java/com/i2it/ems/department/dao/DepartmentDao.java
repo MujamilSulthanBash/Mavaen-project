@@ -34,6 +34,18 @@ public interface DepartmentDao {
      * @throws DataBaseException 
      *     - When Exception occurs.
      */
-    public List<Department> retrieveDepartments() throws DataBaseException;
+    List<Department> retrieveDepartments() throws DataBaseException;
+
+    /**
+     * <p>
+     * Retrieve department by id.
+     * </p>
+     *
+     * @retuen Department
+     *     - Departments detail
+     * @throws DataBaseException 
+     *     - When Exception occurs.
+     */
+    Department retrieveDepartmentById(int id) throws DataBaseException;
 
 }

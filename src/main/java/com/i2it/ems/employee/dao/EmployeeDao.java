@@ -36,4 +36,16 @@ public interface EmployeeDao {
      */
     List<Employee> retrieveEmployees() throws DataBaseException;
 
+    /**
+     * <p>
+     * Retrieve employee by id.
+     * </p>
+     * 
+     * @return Employee
+     *     - Employees details
+     * @throws DataBaseException 
+     *     - when Exception occurs DataBaseException
+     */
+    Employee retrieveEmployeeById(int id) throws DataBaseException;
+
 }
